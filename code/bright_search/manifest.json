@@ -1,0 +1,18 @@
+{
+  "name": "BrightSearch",
+  "description": "The in-page search tool that with auto-correction, stemming, and synonym detection.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "/images/icon.png"
+  },
+  "icons": {
+    "16": "/images/icon.png",
+    "32": "/images/icon.png",
+    "48": "/images/icon.png",
+    "128": "/images/icon.png"
+  },
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"]
+}

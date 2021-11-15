@@ -1,0 +1,17 @@
+body {
+  width: 230px;
+  height: 150px;
+}
+
+.attribution {
+  font-size: 6px;
+  font-style: italic;
+  color: grey;
+  position: absolute;
+  bottom: 0;
+}
+
+div.button-con {
+  margin-left: 20px;
+  margin-top: 10px;
+}
