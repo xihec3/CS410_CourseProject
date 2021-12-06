@@ -1,0 +1,37 @@
+{
+  "name": "fake-app-with-dep",
+  "version": "1.0.0",
+  "description": "Fake app with the npm dependency. Transpiled code will be copied to brightSearch.",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js -o dist/bundle.js",
+    "watch": "watchify index.js -o dist/bundle.js -v"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/env",
+            "@babel/react"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "autocorrect": "^1.2.0",
+    "browserify": "^17.0.0",
+    "watchify": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "babelify": "^10.0.0"
+  }
+}

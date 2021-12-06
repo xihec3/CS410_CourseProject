@@ -14,5 +14,11 @@
     "128": "/images/icon.png"
   },
   "permissions": ["tabs", "scripting"],
-  "host_permissions": ["http://*/*", "https://*/*"]
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["node_modules/word-list/words.txt"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
