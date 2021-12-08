@@ -25,6 +25,8 @@
   "dependencies": {
     "autocorrect": "^1.2.0",
     "browserify": "^17.0.0",
+    "porter-stemmer-english": "^1.0.1",
+    "synonyms": "^1.0.1",
     "watchify": "^4.0.0"
   },
   "devDependencies": {

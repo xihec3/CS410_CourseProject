@@ -3,18 +3,28 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
      // Get query.
      let query = document.getElementById("query").value;
 
-     // Get BrightSearch options.
-     this.with_correction = document.getElementById("enable_auto_correction").checked;
-     this.with_stemming = document.getElementById("enable_stemming").checked;
-     this.with_synonym = document.getElementById("enable_synonym").checked;
-
      this.matchers = [query]
      if (document.getElementById("enable_auto_correction").checked) {
        var corrected = getAutoCorrected(query);
        if (corrected != "" && corrected != query) {
-         this.matchers.push(getAutoCorrected(query));
+         this.matchers.push(corrected);
        } 
      }
+     if (document.getElementById("enable_stemming").checked) {
+       var stemming = getStemming(query);
+       if (stemming != "" && stemming != query) {
+         this.matchers.push(stemming);
+       } 
+     }
+     if (document.getElementById("enable_synonym").checked) {
+       var synonyms = getSynonyms(query);
+       synonyms.forEach((word) => {
+         if (word != query && word != "") {
+           this.matchers.push(word); 
+         }
+       })
+     }
+
      document.getElementById("terms-holder").innerHTML = "Will search for: " + this.matchers.join(", ");
 
      this.target = -1;
